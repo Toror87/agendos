@@ -1,0 +1,7 @@
+GRUPO:
+Antonella Insaurralde
+Sergio Insaurralde
+Nicolás Huergo
+
+Agendos es una agenda de contactos que almacena datos de personas, como nombres, apellidos, teléfono, edad, etc.
+Cuenta con un ABM que es el dar de alta, baja y modificar los datos de los contactos. El usuario puede registrarse y crearse una cuenta personal.
