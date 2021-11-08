@@ -1,96 +1,39 @@
-import './App.css';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+  } from "react-router-dom";
+
+import Home from "./components/home/home.js";
+import Perfil from "./components/profile/profile.js";
+import Edit from "./components/edit/edit.js";
+import Delete from "./components/delete/delete.js";
+import Login from "./components/login/login.js";
+import AuthRoute from "./components/AuthRoute.js";
 
 function App() {
   return (
-    <div>
-			<div className="container">
-			    {/*--  BUSCADOR --*/}
-			  	<header className="header">
-					  <form className="buscador">
-						  <input type="nombre-busqueda" className="buscador-contactos" name="area-busqueda" placeholder="Buscar.." />
-					  </form>
-					  {/*--  BOTON AGREGAR CONTACTO --*/}
-				  	  <a href="editar.html"><i className="fas fa-plus-circle add"></i></a>
-				</header>
-
-
-				{/*--  LISTA DE CONTACTOS --*/}
-				<section className="guia-contactos">
-					<ul className="lista-contactos">
-						<a href="perfil-contacto.html">
-						  	<div className="contactos">
-							  	  <li className="tarjeta">
-										<p className="nombre">Emilia Mernes</p>
-										<p className="relacion">Amigo/a</p>
-								  </li>
-
-								  <li className="tarjeta">
-										<i className="fas fa-phone"></i>
-										<i className="fas fa-sms text"></i>
-								  </li>
-						  	</div>
-					 	</a>
-						<hr/>
-						<a href="perfil-contacto.html">
-						  	<div className="contactos">
-							  	  <li className="tarjeta">
-										<p className="nombre">Nicki Nicole</p>
-										<p className="relacion">Amigo/a</p>
-								  </li>
-
-								  <li className="tarjeta">
-										<i className="fas fa-phone"></i>
-										<i className="fas fa-sms text"></i>
-								  </li>
-						  	</div>
-					 	</a>
-						<hr/>
-						<a href="perfil-contacto.html">
-						  	<div className="contactos">
-							  	  <li className="tarjeta">
-										<p className="nombre">Cazzu</p>
-										<p className="relacion">Amigo/a</p>
-								  </li>
-
-								  <li className="tarjeta">
-										<i className="fas fa-phone"></i>
-										<i className="fas fa-sms text"></i>
-								  </li>
-						  	</div>
-					 	</a>
-						<hr/>
-						<a href="perfil-contacto.html">
-						  	<div className="contactos">
-							  	  <li className="tarjeta">
-										<p className="nombre">María Becerra</p>
-										<p className="relacion">Amigo/a</p>
-								  </li>
-
-								  <li className="tarjeta">
-										<i className="fas fa-phone"></i>
-										<i className="fas fa-sms text"></i>
-								  </li>
-						  	</div>
-					 	</a>
-						<hr/>
-						<a href="perfil-contacto.html">
-						  	<div className="contactos">
-							  	  <li className="tarjeta">
-										<p className="nombre">Tini Stoessel</p>
-										<p className="relacion">Amigo/a</p>
-								  </li>
-
-								  <li className="tarjeta">
-										<i className="fas fa-phone"></i>
-										<i className="fas fa-sms text"></i>
-								  </li>
-						  	</div>
-					 	</a>
-						<hr/>
-					</ul>
-				</section>
-			</div>
-		</div>
+	<Router>
+	<div>
+	  <Switch>
+          <Route exact={true} path="/">
+            <Login />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+		      <Route path="/perfil">
+            <Perfil />
+          </Route>
+		      <Route path="/edit">
+            <Edit />
+          </Route>
+		      <Route path="/delete">
+            <Delete />
+          </Route>
+      </Switch>
+      </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,95 @@
+body{
+	background: radial-gradient(circle, rgba(67,22,219,1) 0%, rgba(144,118,231,1) 100%);
+	font-family: 'Inter', sans-serif;
+	margin: 0;
+}
+
+.containers{
+	max-width: 428px;
+	margin: 0 auto;
+	background-color: #313438;
+	height: 100vh;
+}
+
+a{
+	text-decoration: none;
+}
+
+.header{
+	display: flex;
+	justify-content: space-evenly;
+	color: #fff;
+	background: radial-gradient(circle, rgba(144,118,231,1) 0%, rgba(67,22,219,1) 100%);
+	padding: 2em 0;
+	align-items: center;
+}
+
+.buscador-contactos{
+	font-size: 1.2em;
+	padding:.3em .3em;
+	border-radius: 100px;
+	border:1px solid white;
+	outline: none;
+}
+
+
+.guia-contactos{
+	background: #313438;
+}
+
+.add{
+	color: #fff;
+	font-size: 2.5em;
+}
+
+i{
+	color: #fff;
+	font-size: 2em;
+}
+
+.nombre{
+	color: #fff;
+	font-size: 1.2em;
+}
+
+
+ul{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+hr{
+	border: 1px solicontactd #494a4b;
+}
+
+.tarjeta{
+	list-style: none ;
+}
+
+.relacion{
+	color: #fff;
+	width: 6em;
+	text-align: center;
+	padding: .4em .5em;
+	border-radius: 100px;
+	border-top-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background-color: #9076e7;
+}
+
+.contactos{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 1.5em;
+	transition: 0.3s;
+}
+
+.contactos:hover{
+	background-color: #48494a;
+}
+
+.text{
+	padding-left: 1em;
+}

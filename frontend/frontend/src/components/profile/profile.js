@@ -9,8 +9,8 @@ const Perfil =() => {
                 <i class="fas fa-arrow-circle-left back-btn"></i>
               </Link>
               <div class="hero-info">
-                  <h1 class="nombre">Emilia Mernes</h1>
-                  <p class="relationship">Amigo/a</p>
+                  <h1 class="name">Emilia Mernes</h1>
+                  <p class="relationship-hero">Amigo/a</p>
               </div>
           </header>
 
