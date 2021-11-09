@@ -7,11 +7,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 class Contact(models.Model):
     # el registro del contacto debe poseer un nombre, sí o sí,
     # por defecto un campo de tipo CharField es blank=False
-    first_name = models.CharField(max_length=20)
-    # el apellido puede estar vacío
-    last_name = models.CharField(max_length=20, null=True, blank=True, default='')
-    # la edad es opcional
-    age = models.IntegerField(null=True, blank=True)
+    name = models.CharField(max_length=50)
     # el teléfono NO es un requerimiento
     # PhoneNumberField funciona con base en CharField, pero
     # almacena números de teléfono válidos, por defecto

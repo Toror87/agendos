@@ -1,6 +1,10 @@
 import {
+    // Router sirve para navegar de una view a la otra sin abandonar la página actual
 	BrowserRouter as Router,
+    /* Switch debe envolver todos los tags del componente para poder manejar errores de página
+    como un 404 Page Not Found */
 	Switch,
+    //
 	Route,
   } from "react-router-dom";
 
@@ -37,4 +41,5 @@ function App() {
   );
 }
 
+// necesitamos exportar App para poder visualizarla en los demás archivos del proyecto
 export default App;
