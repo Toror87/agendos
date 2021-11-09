@@ -9,18 +9,20 @@ class ContactSerializer(serializers.ModelSerializer):
 
 # esta clase crea un nuevo usuario
 class RegisterSerializer(serializers.ModelSerializer):
+    # password = serializers.CharField(write_only=True)
+
     class Meta:
         model = get_user_model()
         fields = ["username", "password"]
 
-        def create(self, validated_data):
+    def create(self, validated_data):
             # metodo de Django, modelo de usuario de Django por defecto
             # encripta username y password
-            user = get_user_model().objects.create_user(
-                    username=validated_data['username'],
-                    password=validated_data['password'],
+        user = get_user_model().objects.create_user(
+                username=validated_data['username'],
+                password=validated_data['password'],
             )
-            return user
+        return user
 
 class MeSerializer(serializers.ModelSerializer):
     class Meta:
