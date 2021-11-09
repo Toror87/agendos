@@ -1,10 +1,17 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 from phonenumber_field.modelfields import PhoneNumberField
 
 ''' Modelo para los contactos 
     hereda de models.Model y utiliza sus campos'''
 class Contact(models.Model):
+    # necesito una foreignKey por cada usuario
+    user = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+        related_name='terms'
+    )
     # el registro del contacto debe poseer un nombre, sí o sí,
     # por defecto un campo de tipo CharField es blank=False
     name = models.CharField(max_length=50)
@@ -17,3 +24,7 @@ class Contact(models.Model):
     address = models.CharField(max_length=50, null=True, blank=True, default='')
     # el email no es necesario
     email = models.CharField(max_length=40, null=True, blank=True, default='')
+
+
+
+

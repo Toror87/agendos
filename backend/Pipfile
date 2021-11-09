@@ -10,6 +10,7 @@ django = "*"
 djangorestframework = "*"
 drf-yasg = "*"
 django-phonenumber-field = {extras = ["phonenumbers"],version = "*"}
+djangorestframework-simplejwt = "*"
 
 [requires]
 python_version = "3.9"
