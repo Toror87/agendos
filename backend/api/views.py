@@ -20,7 +20,21 @@ class ContactViewSet(viewsets.ModelViewSet):
 
     # permite crear nuevo registro
     def create(self, request, *args, **kwargs):
+        # tomo el id del usuario activo (logueado)
+        active_user_id = self.request.user.id
+        # al campo "user" de la request, que es la FK de Contact,
+        # le asigno el id del usuario activo
+        request.data["user"] = active_user_id
         return super(ContactViewSet, self).create(request, *args, **kwargs)
+
+    # filtro todos los contactos de usuario activo
+    def get_queryset(self):
+        # tomo el usuario logueado
+        active_user = self.request.user
+        # obtengo todos los contactos del usuario logueado
+        queryset = active_user.contacts.all()
+        # lo retorno al FE
+        return queryset
 
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer

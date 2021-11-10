@@ -12,7 +12,6 @@ from api.views import me
 
 router = routers.DefaultRouter()
 router.register(r'contacts', ContactViewSet, basename='contact')
-router.register(r'register', RegisterView, basename='register')
 
 
 urlpatterns = [

@@ -10,7 +10,7 @@ class Contact(models.Model):
     user = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
-        related_name='users'
+        related_name='contacts'
     )
     # el registro del contacto debe poseer un nombre, sí o sí,
     # por defecto un campo de tipo CharField es blank=False
