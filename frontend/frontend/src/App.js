@@ -12,9 +12,8 @@ import Home from "./components/home/home.js";
 import Perfil from "./components/profile/profile.js";
 import Edit from "./components/edit/edit.js";
 import Delete from "./components/delete/delete.js";
-import new_contact from "./components/new-contact/new-contact.js";
+import New from "./components/new_contact/new_contact.js";
 import Login from "./components/login/login.js";
-import AuthRoute from "./components/AuthRoute.js";
 
 function App() {
   return (
@@ -37,7 +36,7 @@ function App() {
             <Delete />
           </Route>
           <Route path="/new_contact">
-            <new_contact />
+            <New />
           </Route>
       </Switch>
       </div>

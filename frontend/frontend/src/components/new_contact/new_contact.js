@@ -1,4 +1,4 @@
-import './new-contact.css';
+import './new_contact.css';
 import {Link} from 'react-router-dom';
 
 const new_contact =() => {
@@ -6,12 +6,12 @@ const new_contact =() => {
         <div class="containeer">
 			<header class="heroo">
 			
-			<Link to={'/perfil'}>
+			<Link to={'/home'}>
 			     <i class="fas fa-chevron-circle-left back-btn"></i>
 			</Link>
 
 			<div class="heroo-info">
-				<h1 class="name"></h1>
+				<h1 class="name">Nuevo Contacto</h1>
 				<p class="relationship-heroo"></p>
 			</div>
 		</header>
