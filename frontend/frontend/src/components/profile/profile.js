@@ -22,7 +22,7 @@ const Perfil =() => {
 
               <div class="info-line">
                 <i class="fas fa-sms icon-gradient" ></i>
-                <p class="SMS">Enviar mensaje</p>
+                <p class="SMS">Amigo/a</p>
             </div>
             <div class="info-line">
                 <i class="fas fa-envelope icon-gradient" ></i>

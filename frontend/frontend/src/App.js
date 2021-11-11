@@ -13,7 +13,6 @@ import Perfil from "./components/profile/profile.js";
 import Edit from "./components/edit/edit.js";
 import Delete from "./components/delete/delete.js";
 import Login from "./components/login/login.js";
-import AuthRoute from "./components/AuthRoute.js";
 
 function App() {
   return (
