@@ -20,7 +20,7 @@ const Home =() => {
 						  <input type="nombre-busqueda" className="buscador-contactos" name="area-busqueda" placeholder="Buscar.." />
 					  </form>
 					  {/*--  BOTON AGREGAR CONTACTO --*/}
-				  	  <Link to={'edit'}><i className="fas fa-plus-circle add"></i></Link>
+				  	  <Link to={'new_contact'}><i className="fas fa-plus-circle add"></i></Link>
 				</header>
 
 
