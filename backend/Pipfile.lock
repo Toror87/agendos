@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "223b8d34c017ee5fef78beab0d15d1cad1abfce7bcd6c3cafc50d2cbb36b4931"
+            "sha256": "5b6d4a235e9d2b0a1daa5796bd6a802c18433c8df6c99f1eda32b4964a9a7ada"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -60,16 +60,24 @@
             "index": "pypi",
             "version": "==3.2.9"
         },
+        "django-cors-headers": {
+            "hashes": [
+                "sha256:cba6e99659abb0e47cc4aaabb8fcde03f193e6bb3b92ba47c5185ec4cedc5d9e",
+                "sha256:cd6f4360f5246569c149dc1c40c907c191f1ec45551e10d2a2e2e68512652f78"
+            ],
+            "index": "pypi",
+            "version": "==3.10.0"
+        },
         "django-phonenumber-field": {
             "extras": [
                 "phonenumbers"
             ],
             "hashes": [
-                "sha256:52b2e5970133ec5ab701218b802f7ab237229854dc95fd239b7e9e77dc43731d",
-                "sha256:5547fb2b2cc690a306ba77a5038419afc8fa8298a486fb7895008e9067cc7e75"
+                "sha256:9695d3beda772c503ad4e04a4f7012a8227e9e3e4fd0ea4ffb07c43245bf4a8d",
+                "sha256:bbb9cb2e6fc53c476de40428e1354c313a040e8b2fb69ea8ead4ba41a60f926a"
             ],
             "index": "pypi",
-            "version": "==5.2.0"
+            "version": "==6.0.0"
         },
         "djangorestframework": {
             "hashes": [
@@ -119,10 +127,10 @@
         },
         "jinja2": {
             "hashes": [
-                "sha256:827a0e32839ab1600d4eb1c4c33ec5a8edfbc5cb42dafa13b81f182f97784b45",
-                "sha256:8569982d3f0889eed11dd620c706d39b60c36d6d25843961f33f77fb6bc6b20c"
+                "sha256:077ce6014f7b40d03b47d1f1ca4b0fc8328a692bd284016f806ed0eaca390ad8",
+                "sha256:611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7"
             ],
-            "version": "==3.0.2"
+            "version": "==3.0.3"
         },
         "markupsafe": {
             "hashes": [
@@ -207,10 +215,10 @@
         },
         "phonenumbers": {
             "hashes": [
-                "sha256:e29717fcf86d68082fc6e42ca07e52bff863b6e0b354edd1644ba15c35ef213d",
-                "sha256:fa91fff1cefee6873c78f08c767f341a7658c849ffb74b605cb38cefef0e76fa"
+                "sha256:355956697047bc89efd89909373a0bdc50ac725c5613b2684a478d6b408a4010",
+                "sha256:dbc560992844a059f56c7c0c6a587904e65d956740bbfb7e39589980bc9055b8"
             ],
-            "version": "==8.12.36"
+            "version": "==8.12.37"
         },
         "pyjwt": {
             "hashes": [
