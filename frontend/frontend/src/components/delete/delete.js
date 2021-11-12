@@ -3,22 +3,22 @@ import {Link} from 'react-router-dom';
 
 const Delete =() => {
     return (
-        <div class="container">
-		<header class="hero">
+        <div className="container">
+		<header className="hero">
             <Link to={'/edit'}>
-				<i class="fas fa-chevron-circle-left back-btn"></i>
+				<i className="fas fa-chevron-circle-left back-btn"></i>
 			</Link>
-			<div class="hero-info">
-				<h1 class="name">Emilia Mernes</h1>
-				<p class="relationship-hero">Amigo/a</p>
+			<div className="hero-info">
+				<h1 className="name">Emilia Mernes</h1>
+				<p className="relationship-hero">Amigo/a</p>
 			</div>
 		</header>
 
-		<section class="delete-container">
+		<section className="delete-container">
 			<p>Estas seguro/a que quieres eliminar este contacto?</p>
-			<div class="delete-contact">
-				<i class="fas fa-trash delete-icon"></i>
-				<button class="delete-button">Eliminar Contacto</button>
+			<div className="delete-contact">
+				<i className="fas fa-trash delete-icon"></i>
+				<button className="delete-button">Eliminar Contacto</button>
 			</div>
 		</section>
 	</div>

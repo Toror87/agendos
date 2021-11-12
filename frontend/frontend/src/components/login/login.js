@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 const Login = () => {
   return (
-    <div className="containerr">
+    <form className="containerr">
         <div className="card">
             <div className="top row background-top-row">
                 
@@ -12,15 +12,18 @@ const Login = () => {
                 <i className="fa fa-lock" aria-hidden="true"></i>
                 <h1>Agendos</h1>
                 <p>User</p>
-                <input type="text" name="" id="" class="text"/>
+                <input type="text" name="" id="" className="text"/>
                 <p>Password</p>
-                <input type="password" name="" id="" class="text"/>
+                <input type="password" name="" id="" className="text"/>
                 <Link to={'/home'}>
                 <button className="buttonn">Ingresar</button>
                 </Link>
+                <Link to={'/register'}>
+                <button className="buttonn">Registrarse</button>
+                </Link>
             </div>
         </div>
-    </div>  
+    </form>  
   )
 }
 

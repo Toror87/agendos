@@ -2,53 +2,55 @@ import './new_contact.css';
 import {Link} from 'react-router-dom';
 
 const new_contact =() => {
+
+	
+
     return (
-        <div class="containeer">
-			<header class="heroo">
+        <div className="containeer">
+			<header className="heroo">
 			
 			<Link to={'/home'}>
-			     <i class="fas fa-chevron-circle-left back-btn"></i>
+			     <i className="fas fa-chevron-circle-left back-btn"></i>
 			</Link>
 
-			<div class="heroo-info">
-				<h1 class="name">Nuevo Contacto</h1>
-				<p class="relationship-heroo"></p>
+			<div className="heroo-info">
+				<h1 className="name">Nuevo Contacto</h1>
+				<p className="relationship-heroo"></p>
 			</div>
 		</header>
 
-		<section class="contactt-info">
+		<section className="contactt-info">
 
-			<div class="info-line">
-				<i class="fas fa-user-circle icon-gradient"></i>
-				<input type="text" class="type" name="fullname" placeholder="Nombre completo"/>
+			<div className="info-line">
+				<i className="fas fa-user-circle icon-gradient"></i>
+				<input type="text" className="type" name="fullname" placeholder="Nombre completo"
+				  />
 			</div>
 
-			<div class="info-line">
-				<i class="fas fa-sms icon-gradient "></i>
-				<input type="text" class="type" name="relationship" placeholder="Relacion"/>
+			
+			<div className="info-line">
+				<i className="fas fa-phone icon-gradient"></i>
+				<input type="text" className="type" name="phone-number" placeholder="Numero de telefono"/>
 			</div>
 
-			<div class="info-line">
-				<i class="fas fa-phone icon-gradient"></i>
-				<input type="text" class="type" name="phone-number" placeholder="Numero de telefono"/>
+			<div  className="info-line">
+				<i className="fas fa-envelope icon-gradient"></i>
+				<input type="text" className="type" name="e-mail" placeholder="Email"
+				 />
 			</div>
 
-			<div  class="info-line">
-				<i class="fas fa-envelope icon-gradient"></i>
-				<input type="text" class="type" name="e-mail" placeholder="Email"/>
-			</div>
-
-			<div class="info-line">
-				<i class="fas fa-map-marker-alt icon-gradient location"></i>
-				<input type="text" class="type" name="address" placeholder="Direccion"/>
+			<div className="info-line">
+				<i className="fas fa-map-marker-alt icon-gradient location"></i>
+				<input type="text" className="type" name="address" placeholder="Direccion"
+				/>
 			</div>
 			
 		</section>
 
-		<section class="btn-container">
-			<div class="update-contact">
-				<i  class="fas fa-check-circle icon-gradient"></i>
-				<button class="button">Guardar Contacto</button>
+		<section className="btn-container">
+			<div className="update-contact">
+				<i  className="fas fa-check-circle icon-gradient"></i>
+				<button type="submit" className="button">Guardar Contacto</button>
 			</div>
 		</section>
 		</div>

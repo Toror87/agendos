@@ -8,12 +8,13 @@ import {
 	Route,
   } from "react-router-dom";
 
-import Home from "./components/home/home.js";
-import Perfil from "./components/profile/profile.js";
-import Edit from "./components/edit/edit.js";
-import Delete from "./components/delete/delete.js";
-import New from "./components/new_contact/new_contact.js";
+import Home from "./components/home/home";
+import Perfil from "./components/profile/profile";
+import Edit from "./components/edit/edit";
+import Delete from "./components/delete/delete";
+import New from "./components/new_contact/new_contact";
 import Login from "./components/login/login.js";
+import Register from "./components/register/register";
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/new_contact">
             <New />
+          </Route>
+          <Route path="/register">
+            <Register />
           </Route>
       </Switch>
       </div>

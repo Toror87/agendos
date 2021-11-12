@@ -3,41 +3,41 @@ import {Link} from 'react-router-dom';
 
 const Perfil =() => {
     return(
-        <div class="containerrr">
-          <header class="hero">
+        <div className="containerrr">
+          <header className="hero">
               <Link to={'/home'}>
-                <i class="fas fa-arrow-circle-left back-btn"></i>
+                <i className="fas fa-arrow-circle-left back-btn"></i>
               </Link>
-              <div class="hero-info">
-                  <h1 class="name">Emilia Mernes</h1>
-                  <p class="relationship-hero">Amigo/a</p>
+              <div className="hero-info">
+                  <h1 className="name">Emilia Mernes</h1>
+                  <p className="relationship-hero">Amigo/a</p>
               </div>
           </header>
 
-          <section class="contact-info">
-              <div class="info-line">
-                <i class="fas fa-phone icon-gradient" t></i>
-                  <p class="telefono">000-000-0000</p>
+          <section className="contact-info">
+              <div className="info-line">
+                <i className="fas fa-phone icon-gradient" t></i>
+                  <p className="telefono">000-000-0000</p>
               </div>
 
-              <div class="info-line">
-                <i class="fas fa-sms icon-gradient" ></i>
-                <p class="SMS">Amigo/a</p>
+              <div className="info-line">
+                <i className="fas fa-sms icon-gradient" ></i>
+                <p className="SMS">Amigo/a</p>
             </div>
-            <div class="info-line">
-                <i class="fas fa-envelope icon-gradient" ></i>
-                <p class="mail">alguien@gmail.com</p>
+            <div className="info-line">
+                <i className="fas fa-envelope icon-gradient" ></i>
+                <p className="mail">alguien@gmail.com</p>
             </div>
-            <div class="info-line">
-                <i id="location" class="fas fa-map-marker-alt icon-gradient location" ></i>
-                <p class="direccion"> Calle 1234 depto 2</p>
+            <div className="info-line">
+                <i id="location" className="fas fa-map-marker-alt icon-gradient location" ></i>
+                <p className="direccion"> Calle 1234 depto 2</p>
             </div>
           </section>
 
           <Link to={'/edit'}>
-              <section class="edit-contact">
-                  <div class="edit-button">
-                    <i class="fas fa-cog icon-gradient"></i>
+              <section className="edit-contact">
+                  <div className="edit-button">
+                    <i className="fas fa-cog icon-gradient"></i>
                   </div>
               </section>
           </Link>

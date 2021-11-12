@@ -3,13 +3,20 @@ import {Link} from 'react-router-dom';
 
 
 
+
+
 const Home =() => {
+
+	
 
 	const subjects = [
 		{fullname : 'Emilia Mernes', relationship: 'Amigo/a'},
-		{fullname : 'PFCWEf', relationship: 'Padre'},
+		{fullname : 'FWEAFWEf', relationship: 'Padre'},
 		{fullname : 'MFEWCWEfv', relationship: 'Madre'}
 	]
+
+	
+
 
     return(
         <div>
