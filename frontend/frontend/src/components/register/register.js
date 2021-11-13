@@ -1,5 +1,4 @@
 import './register.css';
-
 import {useState} from "react";
 import {httpPost} from "../../utils/httpFunctions";
 
@@ -15,9 +14,7 @@ const Register = () => {
       .then()
     
   }
-
   
-
   return (
     <form className="containerr" onSubmit={registro}>
         <div className="card">
