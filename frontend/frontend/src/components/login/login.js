@@ -2,17 +2,20 @@ import './login.css';
 
 import {useState} from "react";
 import {httpPost} from "../../utils/httpFunctions";
+import {useHistory} from 'react-router-dom'
 
 const Login = () => {
 
   const [username, setUsername] = useState()
   const [password, setPassword] = useState()
-    
 
+  const history = useHistory ();
+    
     const login = (e) => {
       e.preventDefault()
       httpPost('api/login/', { username: username, password: password}).then((res) => {
         localStorage.setItem('token', res.data.access)
+        history.push('/home')
        } )
     
   }
@@ -20,8 +23,8 @@ const Login = () => {
   return (
     <form className="containerr" onSubmit={login}>
         <div className="card">
+          
             <div className="top row background-top-row">
-                
             </div>
             <div className="content">
                 <i className="fa fa-lock" aria-hidden="true"></i>
