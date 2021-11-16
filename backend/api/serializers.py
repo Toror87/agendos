@@ -17,8 +17,8 @@ class RegisterSerializer(serializers.ModelSerializer):
         fields = ["username", "password"]
 
     def create(self, validated_data):
-            # metodo de Django, modelo de usuario de Django por defecto
-            # encripta username y password
+        # metodo de Django, modelo de usuario de Django por defecto
+        # encripta username y password
         user = get_user_model().objects.create_user(
                 username=validated_data['username'],
                 password=validated_data['password'],

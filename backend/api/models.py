@@ -20,6 +20,7 @@ class Contact(models.Model):
     # almacena números de teléfono válidos, por defecto
     # en formate de numero internacional (e.g '+41524204242').
     phone = PhoneNumberField(unique=True, null=True, blank=True)
+    # phone = models.CharField(max_length=20, unique=True, null=True, blank=True)
     # el domicilio no es necesario
     address = models.CharField(max_length=50, null=True, blank=True, default='')
     # el email no es necesario

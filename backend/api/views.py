@@ -39,9 +39,3 @@ class ContactViewSet(viewsets.ModelViewSet):
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
 
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-def me(request):
-    # le doy una instancia del modelo que quiero serializar
-    serializer = MeSerializer(request.user)
-
