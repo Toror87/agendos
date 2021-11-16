@@ -1,12 +1,27 @@
 import './new_contact.css';
 import {Link} from 'react-router-dom';
+import {useState} from "react";
+import {httpPost} from "../../utils/httpFunctions";
+import {useHistory} from 'react-router-dom'
 
-const new_contact =() => {
+const New_contact =() => {
 
-	
+	const [name, setName] = useState()
+	const [phone, setPhone] = useState()
+	const [email, setEmail] = useState()
+	const [address, setAddress] = useState()
+
+	const history = useHistory ();
+  	
+
+	  const createContact = (e) => {
+		e.preventDefault()
+		httpPost('api/contacts/', { name: name, phone: phone, email: email, address: address})
+		.then(history.push('/home'))
+		}
 
     return (
-        <div className="containeer">
+        <form className="containeer" onSubmit={createContact}>
 			<header className="heroo">
 			
 			<Link to={'/home'}>
@@ -24,25 +39,30 @@ const new_contact =() => {
 			<div className="info-line">
 				<i className="fas fa-user-circle icon-gradient"></i>
 				<input type="text" className="type" name="fullname" placeholder="Nombre completo"
-				  />
+				value={name}
+                onChange={(e) => setName(e.target.value) }/>
 			</div>
 
 			
 			<div className="info-line">
 				<i className="fas fa-phone icon-gradient"></i>
-				<input type="text" className="type" name="phone-number" placeholder="Numero de telefono"/>
+				<input type="text" className="type" name="phone-number" placeholder="Numero de telefono"
+				value={phone}
+                onChange={(e) => setPhone(e.target.value) }/>
 			</div>
 
 			<div  className="info-line">
 				<i className="fas fa-envelope icon-gradient"></i>
 				<input type="text" className="type" name="e-mail" placeholder="Email"
-				 />
+				value={email}
+                onChange={(e) => setEmail(e.target.value) }/>
 			</div>
 
 			<div className="info-line">
 				<i className="fas fa-map-marker-alt icon-gradient location"></i>
 				<input type="text" className="type" name="address" placeholder="Direccion"
-				/>
+				value={address}
+                onChange={(e) => setAddress(e.target.value) }/>
 			</div>
 			
 		</section>
@@ -53,8 +73,8 @@ const new_contact =() => {
 				<button type="submit" className="button">Guardar Contacto</button>
 			</div>
 		</section>
-		</div>
+		</form>
     )
 }
 
-export default new_contact;
+export default New_contact;

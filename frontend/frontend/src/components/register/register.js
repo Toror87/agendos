@@ -1,17 +1,19 @@
 import './register.css';
 import {useState} from "react";
 import {httpPost} from "../../utils/httpFunctions";
+import {useHistory} from 'react-router-dom'
 
 const Register = () => {
 
   const [username, setUsername] = useState()
   const [password, setPassword] = useState()
-    
 
+  const history = useHistory ();
+    
     const registro = (e) => {
       e.preventDefault()
       httpPost('api/register/', { username: username, password: password})
-      .then()
+      .then(history.push('/'))
     
   }
   

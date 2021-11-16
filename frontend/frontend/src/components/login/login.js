@@ -1,5 +1,5 @@
 import './login.css';
-
+import {Link} from 'react-router-dom';
 import {useState} from "react";
 import {httpPost} from "../../utils/httpFunctions";
 import {useHistory} from 'react-router-dom'
@@ -40,9 +40,9 @@ const Login = () => {
                 
                 <button type="submit" className="buttonn">Ingresar</button>
                 
-                
+                <Link to="/register">
                 <button className="buttonn">Registrarse</button>
-                
+                </Link>
             </div>
         </div>
     </form>  

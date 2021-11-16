@@ -1,12 +1,21 @@
 import './home.css';
 import {Link} from 'react-router-dom';
-
+import {useEffect, useState} from "react";
+import {httpGet} from "../../utils/httpFunctions";
 
 
 
 
 const Home =() => {
 
+	const [,setContacts] = useState([])
+
+	const fetchContacts = () => {
+		httpGet('api/contacts/')
+		  .then((res) => setContacts(res.data))
+	  }
+	
+	useEffect(fetchContacts, [])
 	
 
 	const subjects = [
