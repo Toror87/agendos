@@ -24,8 +24,3 @@ class RegisterSerializer(serializers.ModelSerializer):
                 password=validated_data['password'],
             )
         return user
-
-class MeSerializer(serializers.ModelSerializer):
-    class Meta:
-            model = get_user_model()
-            fields = ['id', 'username']
