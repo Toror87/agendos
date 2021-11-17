@@ -6,8 +6,6 @@ from rest_framework.permissions import IsAuthenticated
 
 from api.serializers import ContactSerializer
 from api.serializers import RegisterSerializer
-from api.serializers import MeSerializer
-
 
 from api.models import Contact
 
