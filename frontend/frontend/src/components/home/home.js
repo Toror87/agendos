@@ -8,7 +8,7 @@ import {httpGet} from "../../utils/httpFunctions";
 
 const Home =() => {
 
-	const [,setContacts] = useState([])
+	const [contacts,setContacts] = useState([])
 
 	const fetchContacts = () => {
 		httpGet('api/contacts/')
@@ -16,14 +16,6 @@ const Home =() => {
 	  }
 	
 	useEffect(fetchContacts, [])
-	
-
-	const subjects = [
-		{fullname : 'Emilia Mernes', relationship: 'Amigo/a'},
-		{fullname : 'FWEAFWEf', relationship: 'Padre'},
-		{fullname : 'MFEWCWEfv', relationship: 'Madre'}
-	]
-
 	
 
 
@@ -43,14 +35,14 @@ const Home =() => {
 				{/*--  LISTA DE CONTACTOS --*/}
 				<section className="guia-contactos">
 					{
-						subjects.map((subjects) => {
+						contacts.map((contact) => {
 							return(
 								<ul className="lista-contactos">
 								<Link to={'/perfil'}>
 						  			<div className="contactos">
 							  	  		<li className="tarjeta">
-												<p className="nombre">{subjects.fullname}</p>
-												<p className="relacion">{subjects.relationship}</p>
+												<p className="nombre">{contact.name}</p>
+												<p className="relacion">Amigo/a</p>
 								  		</li>
 
 								  		<li className="tarjeta">
