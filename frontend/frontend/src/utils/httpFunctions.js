@@ -13,7 +13,8 @@ export const httpGet = async (endpoint) => {
 
 export const httpPost = async (endpoint, data) => {
     return axios.post(baseUrl + endpoint, data, {
-      headers: localStorage.getItem('token') ?  {
+      headers: 
+      endpoint==='api/register/' ?  {} : localStorage.getItem('token') ? {
         authorization: 'Bearer ' + localStorage.getItem('token')
       } : {}
     }) 
