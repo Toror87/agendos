@@ -19,3 +19,16 @@ export const httpPost = async (endpoint, data) => {
       } : {}
     }) 
 }
+
+/*
+export const httpGetProfile = async (endpoint, id) => {
+  axios.get(baseUrl + endpoint, {
+    headers:
+       localStorage.getItem('token') ? {
+      authorization: 'Bearer ' + localStorage.getItem('token')
+    } : {}
+  }).then((res) => {
+      id===res.data.id ?
+        return res.data : {} })
+}
+*/

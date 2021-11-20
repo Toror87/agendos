@@ -16,8 +16,6 @@ const Home =() => {
 	  }
 	
 	useEffect(fetchContacts, [])
-	
-
 
     return(
         <div>
@@ -38,7 +36,12 @@ const Home =() => {
 						contacts.map((contact) => {
 							return(
 								<ul className="lista-contactos">
-								<Link to={'/perfil'}>
+								<Link to={{
+									pathname: '/perfil',
+									profileProps: {
+										profile_id: contact.id
+									}
+								}}>
 						  			<div className="contactos">
 							  	  		<li className="tarjeta">
 												<p className="nombre">{contact.name}</p>
