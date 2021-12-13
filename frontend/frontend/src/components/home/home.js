@@ -3,18 +3,15 @@ import {Link} from 'react-router-dom';
 import {useEffect, useState} from "react";
 import {httpGet} from "../../utils/httpFunctions";
 
-
-
-
 const Home =() => {
 
 	const [contacts,setContacts] = useState([])
 
-	const fetchContacts = () => {
-		httpGet('api/contacts/')
+	const fetchContacts = (elem) => {
+		httpGet( elem ? `api/contacts?name=${elem}` : 'api/contacts/')
 		  .then((res) => setContacts(res.data))
 	  }
-	
+
 	useEffect(fetchContacts, [])
 
     return(
@@ -23,7 +20,7 @@ const Home =() => {
 			    {/*--  BUSCADOR --*/}
 			  	<header className="header">
 					  <form className="buscador">
-						  <input type="nombre-busqueda" className="buscador-contactos" name="area-busqueda" placeholder="Buscar.." />
+						  <input type="nombre-busqueda" className="buscador-contactos" onChange={e => fetchContacts(e.target.value)} placeholder="Buscar..." />
 					  </form>
 					  {/*--  BOTON AGREGAR CONTACTO --*/}
 				  	  <Link to={'new_contact'}><i className="fas fa-plus-circle add"></i></Link>

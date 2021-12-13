@@ -4,6 +4,10 @@ from rest_framework import generics
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 
+from rest_framework.decorators import action
+from rest_framework.response import Response
+
+
 from api.serializers import ContactSerializer
 from api.serializers import RegisterSerializer
 
@@ -18,6 +22,7 @@ class ContactViewSet(viewsets.ModelViewSet):
 
     # permite crear nuevo registro
     def create(self, request, *args, **kwargs):
+
         # tomo el id del usuario activo (logueado)
         active_user_id = self.request.user.id
         # al campo "user" de la request, que es la FK de Contact,
@@ -25,15 +30,29 @@ class ContactViewSet(viewsets.ModelViewSet):
         request.data["user"] = active_user_id
         return super(ContactViewSet, self).create(request, *args, **kwargs)
 
-    # filtro todos los contactos de usuario activo
+    # filtro todos los contactos de usuario activo o por nombre
     def get_queryset(self):
         # tomo el usuario logueado
         active_user = self.request.user
         # obtengo todos los contactos del usuario logueado
         queryset = active_user.contacts.all()
-        # lo retorno al FE
+
+        # tomo el parámetro de filtro
+        name = self.request.query_params.get('name')
+
+        # si el parámetro existe
+        if name is not None:
+            # filtro
+            queryset = queryset.filter(name__contains=name)
+
+        # lo retorno al FE o todos los contactos del usuario o el filtro
         return queryset
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
 
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
-

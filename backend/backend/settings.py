@@ -135,6 +135,15 @@ REST_FRAMEWORK = {
     )
 }
 
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        }
+    }
+}
 
 
 # aca lo normal seria poner la lista de url's de front end apps que queremos dejar que le hagan requests a este backend
