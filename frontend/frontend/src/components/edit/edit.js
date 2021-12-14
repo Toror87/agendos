@@ -4,17 +4,24 @@ import profile from "../profile/profile";
 import {useLocation} from "react-router-dom";
 import {httpPut} from "../../utils/httpFunctions";
 import {useHistory} from "react-router-dom";
+import {useState} from "react";
 
 const Edit =(props) => {
 	const location = useLocation()
 	let contact_id = location.profileProps.contact_id
 	let contact_name = location.profileProps.contact_name
+	const [new_name, setName] = useState()
+	const [new_phone, setPhone] = useState()
+	const [new_address, setAddress] = useState()
+	const [new_email, setEmail] = useState()
 
 	const history = useHistory()
 
-	const updateContact = () => {
-		httpPut(`api/contacts/${contact_id}`, ).then(history.push('/home'))
+	const updateContact = (data) => {
+		httpPut(`api/contacts/${contact_id}`, {id: contact_id, name: new_name, phone: new_phone, address: new_address, email: new_email}).then(history.push('/home'))
 	}
+
+
 
     return (
         <div className="containerrrr">
@@ -30,11 +37,12 @@ const Edit =(props) => {
 			</div>
 		</header>
 
+			<form onSubmit={updateContact}>
 		<section className="contact-info">
 
 			<div className="info-line">
 				<i className="fas fa-user-circle icon-gradient"></i>
-				<input type="text" className="type" name="fullname" placeholder="Nombre completo"/>
+				<input type="text" className="type" name="fullname" onChange={(e) => setName(e.target.value)} placeholder="Nombre completo"/>
 			</div>
 
 			<div className="info-line">
@@ -44,17 +52,17 @@ const Edit =(props) => {
 
 			<div className="info-line">
 				<i className="fas fa-phone icon-gradient"></i>
-				<input type="text" className="type" name="phone-number" placeholder="Numero de telefono"/>
+				<input type="text" className="type" name="phone-number" onChange={(e) => setPhone(e.target.value)}placeholder="Numero de telefono"/>
 			</div>
 
 			<div  className="info-line">
 				<i className="fas fa-envelope icon-gradient"></i>
-				<input type="text" className="type" name="e-mail" placeholder="Email"/>
+				<input type="text" className="type" name="e-mail" onChange={(e) => setEmail(e.target.value)} placeholder="Email"/>
 			</div>
 
 			<div className="info-line">
 				<i className="fas fa-map-marker-alt icon-gradient location"></i>
-				<input type="text" className="type" name="address" placeholder="Direccion"/>
+				<input type="text" className="type" name="address" onChange={(e) => setAddress(e.target.value)} placeholder="Direccion"/>
 			</div>
 			
 		</section>
@@ -62,9 +70,7 @@ const Edit =(props) => {
 		<section className="button-container">
 			<div className="update-contact">
 				<i  className="fas fa-check-circle icon-gradient"></i>
-				<form onSubmit={updateContact}>
 				<button type="submit" className="button">Guardar Contacto</button>
-				</form>
 			</div>
 		</section>
 
@@ -81,6 +87,7 @@ const Edit =(props) => {
 				</div>
 			</Link>
 		</section>
+			</form>
 		</div>
     )
 }

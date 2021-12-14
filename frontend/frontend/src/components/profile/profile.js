@@ -2,7 +2,7 @@ import './profile.css';
 import {Link} from 'react-router-dom';
 import { useLocation } from "react-router";
 import {httpGet} from "../../utils/httpFunctions";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 // import {render} from "@testing-library/react";
 
 const Perfil =(props) => {
@@ -10,12 +10,12 @@ const Perfil =(props) => {
     const contact_id = location.profileProps.profile_id
     const [contact,setContact] = useState([])
 
-	const fetchProfile = (id) => {
-		httpGet(`api/contacts/${id}`)
+	const fetchProfile = () => {
+		httpGet(`api/contacts/${contact_id}`)
 		  .then((res) => setContact(res.data))
           }
 
-	fetchProfile(contact_id)
+	useEffect(fetchProfile, [contact])
 
         return (
             <div className="containerrr">
