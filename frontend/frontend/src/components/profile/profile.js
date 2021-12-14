@@ -10,16 +10,9 @@ const Perfil =(props) => {
     const contact_id = location.profileProps.profile_id
     const [contact,setContact] = useState([])
 
-	const fetchProfile = (contact_id) => {
-		httpGet('api/contacts/')
-		  .then((res) => {
-                let data = res.data
-                let i;
-                for(i=0; i < data.length; i++) {
-                    if (data[i].id === contact_id) {
-                        setContact(data[i])
-                    }
-                }})
+	const fetchProfile = (id) => {
+		httpGet(`api/contacts/${id}`)
+		  .then((res) => setContact(res.data))
           }
 
 	fetchProfile(contact_id)
@@ -56,7 +49,12 @@ const Perfil =(props) => {
                     </div>
                 </section>
 
-                <Link to={'/edit'}>
+                <Link to={{pathname: '/edit',
+									profileProps: {
+										contact_id: contact.id,
+                                        contact_name: contact.name
+									}
+								}}>
                     <section className="edit-contact">
                         <div className="edit-button">
                             <i className="fas fa-cog icon-gradient"></i>

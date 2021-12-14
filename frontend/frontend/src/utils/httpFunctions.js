@@ -20,15 +20,18 @@ export const httpPost = async (endpoint, data) => {
     }) 
 }
 
-/*
-export const httpGetProfile = async (endpoint, id) => {
-  axios.get(baseUrl + endpoint, {
-    headers:
-       localStorage.getItem('token') ? {
-      authorization: 'Bearer ' + localStorage.getItem('token')
-    } : {}
-  }).then((res) => {
-      id===res.data.id ?
-        return res.data : {} })
+export const httpPut = async (endpoint, data) => {
+    return axios.put(baseUrl + endpoint, data, {
+        headers: {
+            authorization: 'Bearer ' + localStorage.getItem('token')
+        }
+    })
 }
-*/
+
+export const httpDelete = async (endpoint) => {
+    return axios.delete(baseUrl + endpoint, {
+        headers:  {
+            authorization: 'Bearer ' + localStorage.getItem('token')
+        }
+    })
+}

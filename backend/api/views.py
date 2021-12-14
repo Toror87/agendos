@@ -48,11 +48,5 @@ class ContactViewSet(viewsets.ModelViewSet):
         # lo retorno al FE o todos los contactos del usuario o el filtro
         return queryset
 
-    def put(self, request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
-
-    def delete(self, request, *args, **kwargs):
-        return self.destroy(request, *args, **kwargs)
-
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
