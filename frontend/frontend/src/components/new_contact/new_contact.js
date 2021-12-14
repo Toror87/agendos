@@ -5,19 +5,18 @@ import {httpPost} from "../../utils/httpFunctions";
 import {useHistory} from 'react-router-dom'
 
 const New_contact =() => {
-
 	const [name, setName] = useState()
 	const [phone, setPhone] = useState()
 	const [email, setEmail] = useState()
 	const [address, setAddress] = useState()
+	const [user, setUser] = useState()
 
 	const history = useHistory ();
-  	
 
 	  const createContact = (e) => {
 		e.preventDefault()
-		httpPost('api/contacts/', { name: name, phone: phone, email: email, address: address})
-		.then(history.push('/home'))
+		httpPost('api/contacts/', {name: name, phone: phone, email: email, address: address})
+		.then((res) => {setUser(res.data.user)}).then(history.push('/home'))
 		}
 
     return (

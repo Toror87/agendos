@@ -17,7 +17,6 @@ const Login = () => {
         localStorage.setItem('token', res.data.access)
         history.push('/home')
        } )
-    
   }
 
   return (

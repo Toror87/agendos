@@ -18,10 +18,8 @@ const Edit =(props) => {
 	const history = useHistory()
 
 	const updateContact = (data) => {
-		httpPut(`api/contacts/${contact_id}`, {id: contact_id, name: new_name, phone: new_phone, address: new_address, email: new_email}).then(history.push('/home'))
+		httpPut(`api/contacts/${contact_id}/`, {id: contact_id, name: new_name, phone: new_phone, address: new_address, email: new_email, user: data.user}).then(history.push('/home'))
 	}
-
-
 
     return (
         <div className="containerrrr">

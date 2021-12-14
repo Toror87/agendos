@@ -15,7 +15,7 @@ const Perfil =(props) => {
 		  .then((res) => setContact(res.data))
           }
 
-	useEffect(fetchProfile, [contact])
+	useEffect(fetchProfile, [])
 
         return (
             <div className="containerrr">
