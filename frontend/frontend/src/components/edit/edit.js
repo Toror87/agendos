@@ -10,6 +10,7 @@ const Edit =(props) => {
 	const location = useLocation()
 	let contact_id = location.profileProps.contact_id
 	let contact_name = location.profileProps.contact_name
+	let user_id = location.profileProps.user_id
 	const [new_name, setName] = useState()
 	const [new_phone, setPhone] = useState()
 	const [new_address, setAddress] = useState()
@@ -18,7 +19,7 @@ const Edit =(props) => {
 	const history = useHistory()
 
 	const updateContact = (data) => {
-		httpPut(`api/contacts/${contact_id}/`, {id: contact_id, name: new_name, phone: new_phone, address: new_address, email: new_email, user: data.user}).then(history.push('/home'))
+		httpPut(`api/contacts/${contact_id}/`, {id: contact_id, name: new_name, phone: new_phone, address: new_address, email: new_email, user: user_id}).then(history.push('/home'))
 	}
 
     return (

@@ -36,7 +36,8 @@ const Home =() => {
 								<Link to={{
 									pathname: '/perfil',
 									profileProps: {
-										profile_id: contact.id
+										profile_id: contact.id,
+										user_id: contact.user
 									}
 								}}>
 						  			<div className="contactos">

@@ -52,7 +52,8 @@ const Perfil =(props) => {
                 <Link to={{pathname: '/edit',
 									profileProps: {
 										contact_id: contact.id,
-                                        contact_name: contact.name
+                                        contact_name: contact.name,
+                                        user_id: location.profileProps.user_id
 									}
 								}}>
                     <section className="edit-contact">
