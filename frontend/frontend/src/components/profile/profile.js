@@ -25,7 +25,7 @@ const Perfil =(props) => {
                     </Link>
                     <div className="hero-info">
                         <h1 className="name">{contact.name}</h1>
-                        <p className="relationship-hero">Amigo/a</p>
+                        <img width='150' height='150' className="image" src={contact.image} />
                     </div>
                 </header>
 

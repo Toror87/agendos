@@ -3,24 +3,71 @@ import {Link} from 'react-router-dom';
 import {useState} from "react";
 import {httpPost} from "../../utils/httpFunctions";
 import {useHistory} from 'react-router-dom'
+import axios from 'axios';
+
 
 const New_contact =() => {
+
+	
+	const [image, setImage] = useState(null)
 	const [name, setName] = useState()
 	const [phone, setPhone] = useState()
 	const [email, setEmail] = useState()
 	const [address, setAddress] = useState()
-	const [user, setUser] = useState()
+	const [setUser] = useState()
 
 	const history = useHistory ();
 
-	  const createContact = (e) => {
+	const createContact = (e) => {
 		e.preventDefault()
-		httpPost('api/contacts/', {name: name, phone: phone, email: email, address: address})
+		let formField = new FormData()
+		formField.append('name',name)
+		formField.append('phone',phone)
+		formField.append('email',email)
+        formField.append('address',address)
+
+		if(image !== null) {
+			formField.append('image', image)
+		}
+		httpPost('api/contacts/', formField, {
+			headers:{
+				'content-type': 'multipart/form-data'
+			}
+		})
 		.then((res) => {setUser(res.data.user)}).then(history.push('/home'))
 		}
 
+	/*const createContact = (e) => {
+		e.preventDefault()
+		httpPost('api/contacts/', {image: image, name: name, phone: phone, email: email, address: address })
+		.then((res) => {setUser(res.data.user)}).then(history.push('/home'))
+		}
+	/*const addImage = async (e) => {
+		e.preventDefault()
+		let formField = new FormData()
+		formField.append('name',name)
+		formField.append('phone',phone)
+		formField.append('email',email)
+        formField.append('address',address)
+
+		if(image !== null) {
+			formField.append('image', image)
+		}
+		
+		let url = 'http://localhost:8000/api/contacts/';
+		axios.post(url, formField, {
+		  headers: {
+			'content-type': 'multipart/form-data'
+		  }
+		}).then((res) => {setUser(res.data.user)}).then(history.push('/home'))
+		  .catch(err => console.log(err))
+
+		
+	}*/
+	
+
     return (
-        <form className="containeer" onSubmit={createContact}>
+        <form className="containeer" onSubmit={createContact} encType="multipart/form-data" >
 			<header className="heroo">
 			
 			<Link to={'/home'}>
@@ -31,13 +78,19 @@ const New_contact =() => {
 				<h1 className="name">Nuevo Contacto</h1>
 				<p className="relationship-heroo"></p>
 			</div>
-		</header>
+			</header>
 
-		<section className="contactt-info">
+			<section className="contactt-info">
 
 			<div className="info-line">
 				<i className="fas fa-user-circle icon-gradient"></i>
-				<input type="text" className="type" name="fullname" placeholder="Nombre completo"
+				<input type="file" id="image"  onChange={(e)=>setImage(e.target.files[0])} />
+			</div>
+
+			<div className="info-line">
+			
+				<i className="fas fa-user-circle icon-gradient"></i>
+				<input type="text" id="name" className="type" name="fullname" placeholder="Nombre completo"
 				value={name}
                 onChange={(e) => setName(e.target.value) }/>
 			</div>
@@ -45,21 +98,21 @@ const New_contact =() => {
 			
 			<div className="info-line">
 				<i className="fas fa-phone icon-gradient"></i>
-				<input type="text" className="type" name="phone-number" placeholder="Numero de telefono"
+				<input type="text" id="phone" className="type" name="phone-number" placeholder="Numero de telefono"
 				value={phone}
                 onChange={(e) => setPhone(e.target.value) }/>
 			</div>
 
 			<div  className="info-line">
 				<i className="fas fa-envelope icon-gradient"></i>
-				<input type="text" className="type" name="e-mail" placeholder="Email"
+				<input type="text" id="email" className="type" name="e-mail" placeholder="Email"
 				value={email}
                 onChange={(e) => setEmail(e.target.value) }/>
 			</div>
 
 			<div className="info-line">
 				<i className="fas fa-map-marker-alt icon-gradient location"></i>
-				<input type="text" className="type" name="address" placeholder="Direccion"
+				<input type="text" id="address" className="type" name="address" placeholder="Direccion"
 				value={address}
                 onChange={(e) => setAddress(e.target.value) }/>
 			</div>
@@ -69,7 +122,7 @@ const New_contact =() => {
 		<section className="btn-container">
 			<div className="update-contact">
 				<i  className="fas fa-check-circle icon-gradient"></i>
-				<button type="submit" className="button">Guardar Contacto</button>
+				<button type="submit" className="button" >Guardar Contacto</button>
 			</div>
 		</section>
 		</form>

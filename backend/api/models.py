@@ -12,6 +12,9 @@ class Contact(models.Model):
         on_delete=models.CASCADE,
         related_name='contacts'
     )
+    # en este caso no hicimos que sea obligatorio la subida de una imagen
+    # le decimos que las imagenes las guarde en un directorio 'images/'
+    image = models.ImageField(null=True, blank=True, upload_to='images/')
     # el registro del contacto debe poseer un nombre, sí o sí,
     # por defecto un campo de tipo CharField es blank=False
     name = models.CharField(max_length=50)
