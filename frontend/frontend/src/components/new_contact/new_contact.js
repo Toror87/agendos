@@ -14,7 +14,7 @@ const New_contact =() => {
 	const [phone, setPhone] = useState()
 	const [email, setEmail] = useState()
 	const [address, setAddress] = useState()
-	const [setUser] = useState()
+	const [user,setUser] = useState()
 
 	const history = useHistory ();
 
@@ -25,6 +25,7 @@ const New_contact =() => {
 		formField.append('phone',phone)
 		formField.append('email',email)
         formField.append('address',address)
+		formField.append('user',user)
 
 		if(image !== null) {
 			formField.append('image', image)
