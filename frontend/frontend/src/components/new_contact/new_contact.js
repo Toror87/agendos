@@ -84,7 +84,6 @@ const New_contact =() => {
 			<section className="contactt-info">
 
 			<div className="info-line">
-				<i className="fas fa-user-circle icon-gradient"></i>
 				<input type="file" id="image"  onChange={(e)=>setImage(e.target.files[0])} />
 			</div>
 
